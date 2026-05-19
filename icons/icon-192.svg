@@ -1,0 +1,6 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="48" fill="#070706"/>
+  <circle cx="96" cy="96" r="72" fill="#171411" stroke="#FF9D25" stroke-width="10"/>
+  <text x="96" y="83" text-anchor="middle" fill="#FFF8EE" font-family="Arial, sans-serif" font-size="42" font-weight="900">F</text>
+  <text x="96" y="125" text-anchor="middle" fill="#FF9D25" font-family="Arial, sans-serif" font-size="32" font-weight="900">🐾</text>
+</svg>

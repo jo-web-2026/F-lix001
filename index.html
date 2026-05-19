@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070706" />
+    <meta
+      name="description"
+      content="FÉLIX STUDY je milý študijný časovač pre Sárku s denným progresom, predmetmi a Félix odznakmi."
+    />
+    <title>FÉLIX STUDY</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="phone-shell" id="top">
+      <section class="app-screen" aria-label="FÉLIX STUDY">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+
+        <header class="topbar is-view-active" data-view="home">
+          <button class="icon-button" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="status-pill" aria-label="Streak">
+            <span aria-hidden="true">🔥</span>
+            <strong id="streakTop">7</strong>
+          </div>
+        </header>
+
+        <section class="hero is-view-active" data-view="home">
+          <p class="eyebrow">Ahoj, Sárka! 🐾</p>
+          <h1>Dnes ideš na <span>zlato?</span></h1>
+        </section>
+
+        <section class="timer-card is-view-active" data-view="home" aria-label="Študijný časovač">
+          <div class="mascot-wrap mascot-peek" aria-hidden="true">
+            <img src="assets/felix/timer-peek-felix.png" alt="" />
+          </div>
+
+          <div class="timer-ring" style="--timer-progress: 0">
+            <div class="timer-inner">
+              <span class="timer-label" id="timerMode">Sústreď sa</span>
+              <strong id="timerDisplay">25:00</strong>
+              <span class="timer-note" id="timerNote">Čas na sústredenie!</span>
+              <button class="ghost-button" id="changeTimeBtn" type="button">Zmeniť čas</button>
+            </div>
+          </div>
+
+          <div class="timer-actions">
+            <button class="primary-button" id="startPauseBtn" type="button">ŠTART</button>
+            <button class="secondary-button" id="resetBtn" type="button">Reset</button>
+          </div>
+        </section>
+
+        <section class="subjects-section is-view-active" data-view="home" aria-labelledby="subjectsTitle">
+          <div class="section-heading">
+            <h2 id="subjectsTitle">Vyber predmet</h2>
+            <span id="selectedHint">Slovenčina pripravená</span>
+          </div>
+          <div class="subject-grid" id="subjectGrid"></div>
+        </section>
+
+        <section class="subject-details-section" id="subjectDetailsSection" data-view="stats" aria-labelledby="subjectDetailsTitle">
+          <div class="section-heading">
+            <h2 id="subjectDetailsTitle">Karty predmetov</h2>
+            <span>samostatný prehľad</span>
+          </div>
+          <div class="subject-details-grid" id="subjectDetailsGrid" aria-live="polite"></div>
+        </section>
+
+        <section class="badges-card glass-card" data-view="badges" aria-labelledby="badgesTitle">
+          <div class="section-heading">
+            <h2 id="badgesTitle">Úrovne Félixa</h2>
+            <span id="currentBadgeLabel">Dnes ešte bez odznaku</span>
+          </div>
+          <div class="badge-list" id="badgeList"></div>
+        </section>
+
+        <section class="progress-streak-grid" data-view="stats">
+          <article class="progress-card glass-card">
+            <p>Dnešný progres</p>
+            <strong><span id="dailyMinutes">0</span> min</strong>
+            <div class="progress-row">
+              <div class="progress-track">
+                <span id="dailyProgressBar"></span>
+              </div>
+              <b id="dailyPercent">0%</b>
+            </div>
+          </article>
+
+          <article class="streak-card glass-card">
+            <div>
+              <h2>Streak</h2>
+              <p><span id="streakDays">7</span> dní bez prerušenia!</p>
+            </div>
+            <div class="mascot-mini" aria-hidden="true">
+              <img src="assets/felix/streak-felix.png" alt="" />
+            </div>
+            <div class="weekdays" aria-label="Týždenný streak">
+              <span>P</span><span>U</span><span>S</span><span>Š</span><span>P</span><span>S</span><span>N</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="motivation-card glass-card" data-view="profile">
+          <div>
+            <h2>Motivácia pre Sárku</h2>
+            <div class="message-stack" id="messageStack"></div>
+          </div>
+          <div class="felix-portrait" aria-hidden="true">
+            <img src="assets/felix/motivation-felix.png" alt="" />
+          </div>
+        </section>
+
+        <section class="share-card glass-card" data-view="profile">
+          <div class="section-heading">
+            <h2>Zdieľaj svoj úspech</h2>
+            <button class="icon-share" id="shareBtn" type="button" aria-label="Zdieľať úspech">↗</button>
+          </div>
+          <div class="share-preview">
+            <div>
+              <span>Dnes som študovala</span>
+              <strong><span id="shareMinutes">0</span> min</strong>
+              <b id="shareBadge">FÉLIX ČAKÁ</b>
+            </div>
+            <div class="gold-felix" aria-hidden="true">
+              <img src="assets/felix/share-felix.png" alt="" />
+            </div>
+          </div>
+          <p class="hashtag">#FelixStudy</p>
+        </section>
+
+        <section class="why-card glass-card" data-view="profile">
+          <h2>Prečo Félix?</h2>
+          <div class="why-grid">
+            <span>🎯 <b>Pomáha ti sústrediť sa</b></span>
+            <span>⚡ <b>Motivuje ťa každý deň</b></span>
+            <span>🏆 <b>Odmení ťa za tvoje úsilie</b></span>
+          </div>
+        </section>
+
+        <section class="rest-card glass-card" data-view="profile">
+          <div class="sleepy" aria-hidden="true">
+            <span>Zzz</span>
+            <img src="assets/felix/sleepy-felix.png" alt="" />
+          </div>
+          <p>Oddychuj. Zajtra ideš znova! 🐾</p>
+        </section>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Spodná navigácia">
+        <a class="active" href="#home" data-tab="home" aria-current="page"><span>⌂</span>Domov</a>
+        <a href="#stats" data-tab="stats"><span>⇵</span>Štatistiky</a>
+        <a href="#badges" data-tab="badges"><span>♕</span>Odznaky</a>
+        <a href="#profile" data-tab="profile"><span>♡</span>Profil</a>
+      </nav>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
